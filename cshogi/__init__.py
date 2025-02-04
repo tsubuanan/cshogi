@@ -200,3 +200,17 @@ __all__ = [
     "to_csa",
     "to_usi",
 ]
+
+# cshogi/__init__.py
+
+from .kifu_parser import KifuParser
+
+# 他のインポートやコード
+
+def display_kifu_from_result(result):
+    kifu_str = result.get('kif')
+    if kifu_str:
+        parser = KifuParser(kifu_str)
+        parser.display_kifu()
+    else:
+        print("棋譜がありません。")
